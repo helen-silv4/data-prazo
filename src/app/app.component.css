@@ -1,0 +1,27 @@
+.formulario {
+  display: flex;
+  flex-direction: column; /* <<< isso garante que fique abaixo */
+  gap: 15px;
+  width: fit-content;
+}
+
+.mudaModoVencimento {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.prazo-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.prazo-fields input,
+.prazo-fields select {
+  width: 120px;
+}
