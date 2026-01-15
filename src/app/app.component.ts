@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   calcularDataPorPrazo() {
-    const dataAtual = dayjs();
+    const dataAtual = dayjs().startOf('day');
     const dataFutura = dataAtual.add(this.quantidadeDiasPrazoAtual, 'day');
 
     this.mainFormGroup.get('dataVencimento')!.setValue(dataFutura.format('YYYY-MM-DD'), { emitEvent: false })
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 
   calculaPrazoPorData(){
     const dataForm = dayjs(this.mainFormGroup.get('dataVencimento')!.value);
-    const dataAtual = dayjs();
+    const dataAtual = dayjs().startOf('day');
     const quantidade = dataForm.diff(dataAtual, 'day');
 
     this.mainFormGroup.get('quantidadeDiasPrazo')!.setValue(quantidade, { emitEvent: false });
