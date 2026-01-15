@@ -40,4 +40,7 @@
   <div *ngIf="tipoSelecionado === 'data'" class="form-group">
     <input type="date" formControlName="dataVencimento" />
   </div>
+
+  <pre>{{ mainFormGroup.value | json }}</pre>
+
 </form>
