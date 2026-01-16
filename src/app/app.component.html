@@ -24,15 +24,20 @@
 
   <div *ngIf="tipoSelecionado === 'prazo'" class="form-group">
     <div class="prazo-fields">
+        <!--
+            campo derivado, MOSTRA apenas o valor que o usuário digita 
+            o valor real do prazo é armazenado em 'quantidadeDiasPrazo' (em dias)
+        -->
         <input
             type="number"
-            formControlName="quantidadeDiasPrazo"
+            [value]="prazoExibido"
+            (input)="atualizaPrazo($event)"
             min="1"
         />
 
         <select formControlName="unidade">
-            <option value="dia">Dia(s)</option>
-            <option value="mes">Mês(es)</option>
+            <option value="dias">Dia(s)</option>
+            <option value="meses">Mês(es)</option>
         </select>
     </div>
   </div>
